@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace projectTwo.Models
 {
-    public class Employee
+    public class User
     {
         [Key]
         public int EmployeeNumber { get; set; }
-        public int Age { get; set; }
+        public int BusinessTravelId { get; set; }
+        public int DepartmentId { get; set; }
+        public int EducationFieldId { get; set; }
+        public int JobRoleId { get; set; }
     }
 }

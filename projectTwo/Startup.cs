@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 using projectTwo.Data;
 
 namespace projectTwo
@@ -32,24 +35,31 @@ namespace projectTwo
                    Configuration.GetConnectionString("DefaultConnection")
                )
            );
-            services.AddControllers();
-
             services.AddScoped<Context, Context>();
-            services.AddSwaggerGen();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Trevor Tredoux project 2",
+                    Description = "My First API",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Trevor Tredoux",
+                        Email = "trevor998tredoux@gmail.com",
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "TrevorTredoux",
+                    }
+                });
+
+            });
+            services.AddControllers();
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-    
-            }
-            if (!env.IsProduction())
-            {
-                
-                
-            }
             app.UseHttpsRedirection();
             app.UseSwagger();
             app.UseSwaggerUI(c =>

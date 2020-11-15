@@ -13,11 +13,11 @@ namespace projectTwo.Data
         {
             
         }
-         public DbSet<Employee> Employee { get; set; }
         public DbSet<BusinessTravel> BusinessTravel { get; set; }
         public DbSet<Department> Department { get; set; }
         public DbSet<EducationField> EducationField { get; set; }
         public DbSet<JobRole> JobRole { get; set; }
+        public DbSet<User> User { get; set; }
 
 
 
