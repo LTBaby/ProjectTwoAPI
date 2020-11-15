@@ -26,15 +26,15 @@ namespace projectTwo.Controllers
         public ActionResult getDepartmentList()
         {
 
-            var travel = _context.Department.ToList();
-            return new JsonResult(travel);
+            var department = _context.Department.ToList();
+            return new JsonResult(department);
         }
         [HttpGet("getlistbyId{id}")]
         public async Task<ActionResult<DepartmentDTO>> getDepartmentById(int Id)
         {
 
-            var travel = await _context.Department.FindAsync(Id);
-            return new JsonResult(travel);
+            var department = await _context.Department.FindAsync(Id);
+            return new JsonResult(department);
         }
         [HttpPost("saveEdit")]
         public async Task<ActionResult<DepartmentDTO>> PostDepartment(DepartmentDTO departmentDTO)
