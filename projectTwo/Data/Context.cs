@@ -19,8 +19,7 @@ namespace projectTwo.Data
         public DbSet<JobRole> JobRole { get; set; }
         public DbSet<User> User { get; set; }
 
-
-
-
     }
+
+
 }

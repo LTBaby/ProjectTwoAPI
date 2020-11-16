@@ -67,6 +67,12 @@ C:\Users\User\Desktop\Student\Project2_codename_API\projectTwo\projectTwo\bin\De
 C:\Users\User\Desktop\Student\Project2_codename_API\projectTwo\projectTwo\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll
 C:\Users\User\Desktop\Student\Project2_codename_API\projectTwo\projectTwo\bin\Debug\netcoreapp3.1\Swashbuckle.Core.dll
 C:\Users\User\Desktop\Student\Project2_codename_API\projectTwo\projectTwo\bin\Debug\netcoreapp3.1\WebActivatorEx.dll
+C:\Users\User\Desktop\Student\Project2_codename_API\projectTwo\projectTwo\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
+C:\Users\User\Desktop\Student\Project2_codename_API\projectTwo\projectTwo\bin\Debug\netcoreapp3.1\EntityFramework.dll
+C:\Users\User\Desktop\Student\Project2_codename_API\projectTwo\projectTwo\bin\Debug\netcoreapp3.1\System.CodeDom.dll
+C:\Users\User\Desktop\Student\Project2_codename_API\projectTwo\projectTwo\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\User\Desktop\Student\Project2_codename_API\projectTwo\projectTwo\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\User\Desktop\Student\Project2_codename_API\projectTwo\projectTwo\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\User\Desktop\Student\Project2_codename_API\projectTwo\projectTwo\obj\Debug\netcoreapp3.1\projectTwo.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\Student\Project2_codename_API\projectTwo\projectTwo\obj\Debug\netcoreapp3.1\projectTwo.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\User\Desktop\Student\Project2_codename_API\projectTwo\projectTwo\obj\Debug\netcoreapp3.1\projectTwo.MvcApplicationPartsAssemblyInfo.cache

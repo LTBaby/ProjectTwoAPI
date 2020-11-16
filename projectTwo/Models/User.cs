@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,10 +11,14 @@ namespace projectTwo.Models
     {
         [Key]
         public int EmployeeNumber { get; set; }
-        public int BusinessTravelId { get; set; }
-        public int DepartmentId { get; set; }
-        public int EducationFieldId { get; set; }
-        public int JobRoleId { get; set; }
+        [ForeignKey("BusinessTravel")]
+        public int? BusinessTravelId { get; set; }
+        [ForeignKey("Department")]
+        public int? DepartmentId { get; set; }
+        [ForeignKey("EducationField")]
+        public int? EducationFieldId { get; set; }
+        [ForeignKey("JobRole")]
+        public int? JobRoleId { get; set; }
         public int Age { get; set; }
         public string Attrition { get; set; }
         public int DailyRate { get; set; }
@@ -43,7 +48,10 @@ namespace projectTwo.Models
         public int YearsSinceLastPromotion { get; set; }
         public int YearsWithCurrManager { get; set; }
 
-
+        public virtual BusinessTravel BusinessTravel { get; set; }
+        public virtual Department Department { get; set; }
+        public virtual EducationField EductionField { get; set; }
+        public virtual JobRole JobRole { get; set; }
 
     }
 }
