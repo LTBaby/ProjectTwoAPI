@@ -21,7 +21,24 @@ namespace projectTwo.Controllers
         {
             _context = context;
         }
+        [HttpGet("getBusinessTravelNames")]
+        public ActionResult getBusinessTravelNames()
+        {
+            try
+            {
+                var travel = _context.BusinessTravel.Select(x => new
+                {
+                    Name = x.Name
+                });
 
+                return new JsonResult(travel);
+            }
+            catch (Exception e)
+            {
+                string excep = e.ToString();
+                return (new JsonResult(null));
+            }
+        }
         [HttpGet("getBusinessTravelList")]
         public ActionResult getBusinessTravel()
         {
