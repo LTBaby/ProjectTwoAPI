@@ -37,7 +37,7 @@ namespace projectTwo.Services
                     return null;
                 }
 
-                User exstuser = _context.User.Where(x => x.Password == model.Password && (x.EmployeeNumber == model.EmployeeNumber;
+                User exstuser = (User)_context.User.Where(x => x.Password == model.Password && (x.EmployeeNumber == model.EmployeeNumber));
 
                 if (exstuser == null) return null;
                 //{

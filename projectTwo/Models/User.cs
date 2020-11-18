@@ -47,6 +47,7 @@ namespace projectTwo.Models
         public int YearsInCurrentRole { get; set; }
         public int YearsSinceLastPromotion { get; set; }
         public int YearsWithCurrManager { get; set; }
+        public string Password { get; set; }
 
         public virtual BusinessTravel BusinessTravel { get; set; }
         public virtual Department Department { get; set; }
