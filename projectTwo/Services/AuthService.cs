@@ -28,7 +28,7 @@ namespace projectTwo.Services
         {
             try
             {
-                if ((model.EmployeeNumber == null) || (model.EmployeeNumber == "0") || (model.EmployeeNumber == "string") || (model.EmployeeNumber == "String") || (model.EmployeeNumber is null))
+                if (model.EmployeeNumber == 0)
                 {
                     return null;
                 }
@@ -55,7 +55,7 @@ namespace projectTwo.Services
                 {
                     Subject = new ClaimsIdentity(new Claim[]
                     {
-                        new Claim(ClaimTypes.Name, exstuser.ClientKeyEncode.ToString())
+                        new Claim(ClaimTypes.Name, exstuser.EmployeeNumber.ToString())
                     }),
                     Expires = DateTime.UtcNow.AddMinutes(120),
                     SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
@@ -63,28 +63,12 @@ namespace projectTwo.Services
                 var mtoken = GenerateJSONWebToken(); //tokenHandler.CreateToken(tokenDescriptor);
                 if (mtoken == null) return null;
 
-                var getuserRole = userRoleCode(exstuser.Id);
-                if (getuserRole == null) return null;
+                //var getuserRole = userRoleCode(exstuser.Id);
+                //if (getuserRole == null) return null;
 
-                var accountObject = DbContext.PerAccountUser.Where(x => x.UserId == exstuser.Id)
-                   .Include("User")
-                   .Select(p => new
-                   {
-                       UserKey = p.User.ClientKeyEncode,
-                       Token = mtoken,
-                       UserRoles = getuserRole,
-                       Account = (from a in Context.Account
-                                  where p.AccountId == a.Id
-                                  select new
-                                  {
-                                      AccountKey = a == null ? "Not Assign" : a.AccountKeyEncode,
-                                      AccountName = a == null ? "Not Assign" : a.Name,
-                                      AccountId = a == null ? 0 : a.Id,
-                                  }).FirstOrDefault()
+                
 
-                   }).ToList();
-
-                return new JsonResult(accountObject);
+                return new JsonResult("");
             }
             catch (Exception e)
             {
