@@ -109,8 +109,6 @@ namespace projectTwo
 
             // Web API routes    
             config.MapHttpAttributeRoutes();
-
-
         }
     }
 }
