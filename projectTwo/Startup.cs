@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
@@ -94,8 +95,7 @@ namespace projectTwo
 
                 });
             app.UseRouting();
-            app.UseAuthentication();
-            app.UseAuthorization();
+           
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

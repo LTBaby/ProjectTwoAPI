@@ -75,15 +75,29 @@ namespace projectTwo.Services
                 return new JsonResult(e.ToString());
             }
         }
-        private string GenerateJSONWebToken()
+        private string GenerateJSONWebToken(AuthUserInfoDTO user)
         {
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+            var jwtKey = "b0a63101-30e9-4d6a-bd22-a327c0cf9281";
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-            var token = new JwtSecurityToken(_configuration["Jwt:Issuer"],
-              _configuration["Jwt:Audience"],
-              null,
-              expires: DateTime.Now.AddMinutes(120),
+            var claims = new List<Claim>
+            {
+                new Claim("name", user.DisplayName),
+                new Claim("isStudent", user.IsStudent.ToString()),
+                new Claim("profilePictureUrl", user.ProfilePictureUrl ?? ""),
+                new Claim("userId", user.CurrentUserId.ToString())
+            };
+
+            user.SitePermissions.ForEach(x =>
+            {
+                claims.Add(new Claim("SitePermission", JsonConvert.SerializeObject(x)));
+            });
+
+            var token = new JwtSecurityToken("Fourty5.Core.Services.AuthenticationService",
+              "Fourty5.Web.Controllers.Authentication",
+              claims,
+              expires: DateTime.Now.AddDays(365),
               signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);

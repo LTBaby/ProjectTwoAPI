@@ -80,6 +80,7 @@ C:\Users\User\Desktop\Student\Project2_codename_API\projectTwo\projectTwo\bin\De
 C:\Users\User\Desktop\Student\Project2_codename_API\projectTwo\projectTwo\bin\Debug\netcoreapp3.1\Owin.dll
 C:\Users\User\Desktop\Student\Project2_codename_API\projectTwo\projectTwo\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\User\Desktop\Student\Project2_codename_API\projectTwo\projectTwo\bin\Debug\netcoreapp3.1\System.Web.Http.Owin.dll
+C:\Users\User\Desktop\Student\Project2_codename_API\projectTwo\projectTwo\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\User\Desktop\Student\Project2_codename_API\projectTwo\projectTwo\obj\Debug\netcoreapp3.1\projectTwo.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\Student\Project2_codename_API\projectTwo\projectTwo\obj\Debug\netcoreapp3.1\projectTwo.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\User\Desktop\Student\Project2_codename_API\projectTwo\projectTwo\obj\Debug\netcoreapp3.1\projectTwo.MvcApplicationPartsAssemblyInfo.cache
